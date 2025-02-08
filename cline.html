@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background: #f0f0f0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .home {
+            position: relative;
+            width: 430px;
+            height: 932px;
+            background: #FFFFFF;
+            border-radius: 35px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .rectangle-91 {
+            position: absolute;
+            width: 430px;
+            height: 929px;
+            left: 0;
+            top: 0;
+            background: #FFFFFF;
+        }
+
+        .rectangle-91::before {
+            content: "";
+            position: absolute;
+            width: 430px;
+            height: 340px;
+            left: 0px;
+            top: 0px;
+            background: #478DF6;
+            border-radius: 35px 35px 120px 120px;
+            z-index: 0;
+        }
+
+        .resnet {
+            position: absolute;
+            width: 119px;
+            height: 61px;
+            left: 19px;
+            top: 48px;
+            font-family: 'Lobster', cursive;
+            font-size: 45px;
+            line-height: 134.69%;
+            color: #FFFFFF;
+            margin: 0;
+            z-index: 1;
+        }
+
+        /* Group 16 */
+        .group-16 {
+            position: absolute;
+            width: 456px;
+            height: 90px;
+            left: -19px;
+            top: 856px;
+        }
+
+        /* Subtract */
+        .subtract {
+            position: absolute;
+            width: 456px;
+            height: 90px;
+            left: -19px;
+            top: 856px;
+            background: #478DF6;
+        }
+
+        /* Rectangle 65 */
+        .rectangle-65 {
+            display: none;
+        }
+
+        /* Ellipse 3 */
+        .ellipse-3 {
+            position: absolute;
+            width: 82px;
+            height: 82px;
+            left: 174px;
+            top: 815px;
+            background: #D9D9D9;
+        }
+
+        /* Group 15 */
+        .group-15 {
+            position: absolute;
+            width: 224px;
+            height: 82px;
+            left: 103px;
+            top: 856px;
+        }
+
+        /* Ellipse 4 */
+        .ellipse-4 {
+            position: absolute;
+            width: 82px;
+            height: 82px;
+            left: 103px;
+            top: 856px;
+            background: #478DF6;
+        }
+
+        /* Ellipse 5 */
+        .ellipse-5 {
+            position: absolute;
+            width: 82px;
+            height: 82px;
+            left: 245px;
+            top: 856px;
+            background: #478DF6;
+        }
+
+        /* heart */
+        .heart-icon {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            left: 376px;
+            top: 873px;
+        }
+
+        /* home */
+        .home-icon {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            left: 31px;
+            top: 873px;
+        }
+
+        /* user */
+        .user-icon {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            left: 113px;
+            top: 873px;
+        }
+
+        /* Status Bar */
+        .status-bar {
+            position: absolute;
+            width: 430px;
+            height: 58px;
+            left: 0px;
+            top: 0px;
+            border-radius: 0px;
+            background: transparent;
+            z-index: 1;
+        }
+
+        /* Result Section */
+        .result-section {
+            position: absolute;
+            width: 327px;
+            height: 208px;
+            left: 24px;
+            top: 320px;
+            z-index: 1;
+        }
+
+        /* Doctor Card */
+        .doctor-card {
+            position: relative;
+            width: 327px;
+            height: 94px;
+            background: #FFFFFF;
+            box-shadow: 0px 5px 30px rgba(178, 178, 178, 0.2);
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .doctor-card:first-child {
+            margin-top: 0;
+        }
+
+        .doctor-card:nth-child(2) {
+            margin-top: 20px;
+        }
+
+        /* Doctor Name */
+        .doctor-name {
+            position: absolute;
+            width: 49px;
+            height: 16px;
+            font-family: 'Poppins';
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+            letter-spacing: 0.02em;
+            color: #080C2F;
+            z-index: 2;
+            width: auto;
+            left: 100px;
+            top: 20px;
+        }
+
+        /* Rating */
+        .rating {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            gap: 4px;
+            position: absolute;
+            width: 39px;
+            height: 16px;
+            left: 100px;
+            top: 65px;
+        }
+
+        /* Add Button */
+        .add-button {
+            position: fixed;
+            width: 72px;
+            height: 72px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 74px;
+            z-index: 11;
+        }
+
+        .add-button::before,
+        .add-button::after {
+            content: '';
+            position: absolute;
+            background: #FFFFFF;
+            border-radius: 2px;
+        }
+
+        .add-button::before {
+            width: 24px;
+            height: 4px;
+        }
+
+        .add-button::after {
+            width: 4px;
+            height: 24px;
+        }
+
+        /* Group 1 */
+        .group-1 {
+            position: absolute;
+            width: 51px;
+            height: 51px;
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+        }
+
+        /* Rectangle 2 */
+        .notification-box {
+            position: absolute;
+            width: 51px;
+            height: 51px;
+            left: 285px;
+            top: 0px;
+            background: rgba(1, 123, 246, 0.69);
+            border-radius: 14px;
+        }
+
+        /* Status Bar Elements */
+        .status-bar-battery {
+            box-sizing: border-box;
+            position: absolute;
+            width: 21.7px;
+            height: 11px;
+            right: 18.3px;
+            top: 17px;
+            mix-blend-mode: normal;
+            opacity: 0.35;
+            border: 1px solid #FFFFFF;
+            border-radius: 2.66667px;
+        }
+
+        .battery-level {
+            position: absolute;
+            width: 17.76px;
+            height: 7.12px;
+            right: 20.27px;
+            top: 18.94px;
+            background: #FFFFFF;
+            border-radius: 1.33333px;
+        }
+
+        .wifi-icon {
+            position: absolute;
+            left: 86.05%;
+            right: 10.47%;
+            top: 29.31%;
+            bottom: 51.72%;
+            background: #FFFFFF;
+        }
+
+        .wifi-path {
+            position: absolute;
+            background: #DADADA;
+        }
+
+        .wifi-path-1 {
+            width: 15px;
+            height: 4.76px;
+            right: 45px;
+            top: 17px;
+        }
+
+        .wifi-path-2 {
+            width: 9.77px;
+            height: 3.65px;
+            right: 47.61px;
+            top: 20.81px;
+        }
+
+        .wifi-path-3 {
+            width: 4.54px;
+            height: 3.39px;
+            right: 50.23px;
+            top: 24.61px;
+        }
+
+        /* Mobile Signal */
+        .mobile-signal {
+            position: absolute;
+            left: 80.93%;
+            right: 15.12%;
+            top: 29.31%;
+            bottom: 51.72%;
+            background: #FFFFFF;
+        }
+
+        .signal-path {
+            position: absolute;
+            width: 3px;
+            background: #DADADA;
+        }
+
+        .signal-path-1 {
+            height: 4.12px;
+            right: 79px;
+            top: 23.88px;
+        }
+
+        .signal-path-2 {
+            height: 6.19px;
+            right: 74.33px;
+            top: 21.81px;
+        }
+
+        .signal-path-3 {
+            height: 8.59px;
+            right: 69.67px;
+            top: 19.41px;
+        }
+
+        .signal-path-4 {
+            height: 11px;
+            right: 65px;
+            top: 17px;
+        }
+
+        /* Add Button Lines */
+        .add-button-line {
+            position: absolute;
+            width: 16px;
+            height: 0px;
+            background: #FFFFFF;
+            border: 5px solid #FFFFFF;
+        }
+
+        .line-horizontal {
+            left: 207px;
+            top: 844px;
+        }
+
+        .line-vertical {
+            left: 215px;
+            top: 852px;
+            transform: rotate(-90deg);
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            bottom: 0;
+            width: 430px;
+            height: 90px;
+            background: #478DF6;
+            border-radius: 0 0 35px 35px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 10;
+            padding-bottom: 20px;
+        }
+
+        .navigation > div {
+            color: #FFFFFF;
+            font-size: 28px;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Star Rating */
+        .star {
+            color: #FFBB0E;
+            font-size: 16px;
+        }
+
+        .score {
+            color: rgba(8, 12, 47, 0.65);
+            font-size: 12px;
+        }
+
+        /* 为您推荐医生 */
+        .doctor-recommendation {
+            position: absolute;
+            width: 289px;
+            height: 48px;
+            left: 19px;
+            top: 280px;
+            z-index: 1;
+        }
+
+        /* Result */
+        .result {
+            position: absolute;
+            width: 327px;
+            height: 208px;
+            left: 24px;
+            top: 402px;
+        }
+
+        /* Group 10 */
+        .group-10 {
+            position: absolute;
+            width: 327px;
+            height: 94px;
+            left: 24px;
+            top: 402px;
+        }
+
+        /* Rectangle 4 */
+        .rectangle-4 {
+            position: absolute;
+            width: 327px;
+            height: 94px;
+            left: 24px;
+            top: 402px;
+            background: #FFFFFF;
+            box-shadow: 0px 5px 30px rgba(178, 178, 178, 0.2);
+            border-radius: 15px;
+        }
+
+        /* Rectangle 5 */
+        .rectangle-5 {
+            position: absolute;
+            width: 97px;
+            height: 94px;
+            left: 24px;
+            top: 402px;
+            background: #FFF2E4;
+            border-radius: 15px;
+        }
+
+        /* Doctor Info */
+        .doctor-title {
+            position: absolute;
+            width: 25px;
+            height: 12px;
+            left: 100px;
+            top: 45px;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 12px;
+            letter-spacing: 0.02em;
+            color: rgba(8, 12, 47, 0.65);
+            z-index: 2;
+            width: auto;
+        }
+
+        /* Frame 8 */
+        .doctor-avatar {
+            position: absolute;
+            width: 72px;
+            height: 79px;
+            left: 12px;
+            top: 8px;
+            background-color: #FFF2E4;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .doctor-card:nth-child(2) .doctor-avatar {
+            background-color: #D0F8EC;
+        }
+
+        /* Star Rating Container */
+        .star-rating {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            padding: 0px;
+            gap: 4px;
+            position: absolute;
+            width: 39px;
+            height: 16px;
+            left: 100px;
+            top: 65px;
+            z-index: 2;
+        }
+
+        /* Navigation icons */
+        .home-icon, .user-icon, .heart-icon {
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        /* Status bar time */
+        .status-bar::before {
+            content: "09:41";
+            position: absolute;
+            left: 21px;
+            top: 12px;
+            font-family: 'SF Pro Text', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            color: #FFFFFF;
+        }
+
+        /* Doctor card positioning */
+        .doctor-card:nth-child(2) {
+            top: 114px;
+        }
+
+        .rating {
+            left: 100px;
+            top: 65px;
+        }
+
+        .doctor-name {
+            left: 100px;
+            top: 20px;
+        }
+
+        /* 搜索框样式 */
+        .search-box {
+            position: absolute;
+            width: 327px;
+            height: 56px;
+            left: 53px;
+            top: 180px;
+            z-index: 1;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            width: 100%;
+            height: 100%;
+            font-family: 'Poppins';
+            font-size: 14px;
+            color: rgba(8, 12, 47, 0.65);
+            padding-left: 40px;
+        }
+
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 20px;
+            font-size: 16px;
+        }
+
+        /* 欢迎文本 */
+        .welcome-text {
+            position: absolute;
+            left: 48px;
+            top: 120px;
+            font-family: 'Poppins';
+            font-weight: 500;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.75);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="home">
+        <div class="rectangle-91">
+            <div class="resnet">ResNet</div>
+            <div class="welcome-text">你好，用户</div>
+            <div class="status-bar">
+                <div class="status-bar-battery">
+                    <div class="battery-level"></div>
+                </div>
+                <div class="wifi-icon">
+                    <div class="wifi-path wifi-path-1"></div>
+                    <div class="wifi-path wifi-path-2"></div>
+                    <div class="wifi-path wifi-path-3"></div>
+                </div>
+                <div class="mobile-signal">
+                    <div class="signal-path signal-path-1"></div>
+                    <div class="signal-path signal-path-2"></div>
+                    <div class="signal-path signal-path-3"></div>
+                    <div class="signal-path signal-path-4"></div>
+                </div>
+            </div>
+            
+            <div class="group-16"></div>
+            <div class="subtract"></div>
+            <div class="ellipse-3"></div>
+            
+            <div class="group-15">
+                <div class="ellipse-4"></div>
+                <div class="ellipse-5"></div>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" placeholder="搜索">
+            </div>
+            
+            <div class="doctor-recommendation">为您推荐医生</div>
+            
+            <div class="result-section">
+                <div class="doctor-card">
+                    <div class="doctor-avatar">👨‍⚕️</div>
+                    <div class="doctor-name">李医生</div>
+                    <div class="doctor-title">博士</div>
+                    <div class="star-rating">
+                        <span class="star">★</span>
+                        <span class="score">4.8</span>
+                    </div>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-avatar">👩‍⚕️</div>
+                    <div class="doctor-name">陈医生</div>
+                    <div class="doctor-title">硕士</div>
+                    <div class="star-rating">
+                        <span class="star">★</span>
+                        <span class="score">4.8</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navigation">
+                <div class="home-icon">🏠</div>
+                <div class="user-icon">👤</div>
+                <div class="heart-icon">❤️</div>
+            </div>
+            
+            <div class="add-button">
+                <div class="add-button-line line-horizontal"></div>
+                <div class="add-button-line line-vertical"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

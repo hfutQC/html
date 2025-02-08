@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>医生预约系统</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="figma_css.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部蓝色背景 -->
+        <div class="header">
+            <!-- 状态栏 -->
+            <div class="status-bar">
+                <div class="time">09:41</div>
+            </div>
+            
+            <!-- 欢迎文本 -->
+            <div class="welcome">你好，*****</div>
+            
+            <!-- 搜索框 -->
+            <div class="search">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#080C2F" stroke-opacity="0.65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M21 21L16.65 16.65" stroke="#080C2F" stroke-opacity="0.65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="search-text">搜索</span>
+            </div>
+        </div>
+
+        <!-- 推荐医生标题 -->
+        <div class="recommend-title">为您推荐医生</div>
+
+        <!-- 医生卡片1 -->
+        <div class="doctor-card">
+            <div class="doctor-avatar" style="background: #FFF2E4;">
+                <!-- 医生头像 -->
+            </div>
+            <div class="doctor-info">
+                <div class="doctor-name">李医生</div>
+                <div class="doctor-title">博士</div>
+                <div class="doctor-rating">
+                    <svg class="star-icon" viewBox="0 0 16 16" fill="#FFBB0E">
+                        <path d="M8 1.5l2.472 5.007 5.528.803-4 3.896.944 5.507L8 14.007l-4.944 2.706.944-5.507-4-3.896 5.528-.803L8 1.5z"/>
+                    </svg>
+                    <span class="rating-text">4.8</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 医生卡片2 -->
+        <div class="doctor-card">
+            <div class="doctor-avatar" style="background: #D0F8EC;">
+                <!-- 医生头像 -->
+            </div>
+            <div class="doctor-info">
+                <div class="doctor-name">陈医生</div>
+                <div class="doctor-title">硕士</div>
+                <div class="doctor-rating">
+                    <svg class="star-icon" viewBox="0 0 16 16" fill="#FFBB0E">
+                        <path d="M8 1.5l2.472 5.007 5.528.803-4 3.896.944 5.507L8 14.007l-4.944 2.706.944-5.507-4-3.896 5.528-.803L8 1.5z"/>
+                    </svg>
+                    <span class="rating-text">4.8</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部导航栏 -->
+        <div class="bottom-nav">
+            <svg class="nav-item" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+            </svg>
+            <svg class="nav-item" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+            </svg>
+            
+            <!-- 添加按钮 -->
+            <div class="add-button">
+                <svg class="add-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+                    <path d="M8 3v10M3 8h10"/>
+                </svg>
+            </div>
+            
+            <svg class="nav-item" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z"/>
+            </svg>
+            <svg class="nav-item" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+            </svg>
+        </div>
+    </div>
+</body>
+</html> 

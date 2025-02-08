@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动应用界面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f5f5f5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .app-container {
+            width: 430px;
+            height: 932px;
+            background: white;
+            border-radius: 35px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: #478DF6;
+            height: 194px;
+            border-radius: 35px 35px 0 0;
+            padding: 20px;
+            color: white;
+        }
+
+        .status-bar {
+            height: 44px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .card-orange {
+            background: #FFF2E4;
+        }
+
+        .card-green {
+            background: #D0F8EC;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 90px;
+            background: #478DF6;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding-bottom: 20px;
+        }
+
+        .add-button {
+            width: 72px;
+            height: 72px;
+            background: #478DF6;
+            border-radius: 50%;
+            border: none;
+            color: white;
+            font-size: 36px;
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-item {
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .bottom-nav {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 76px;
+            background: #478DF6;
+            border-radius: 35px 35px 0 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .search-container {
+            position: absolute;
+            top: 120px;
+            left: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 12px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .search-container input {
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            margin-left: 8px;
+        }
+
+        .search-icon {
+            color: #999;
+        }
+
+        .doctor-card {
+            background: white;
+            border-radius: 15px;
+            padding: 16px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .doctor-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background: #f0f0f0;
+            margin-right: 16px;
+        }
+
+        .doctor-info {
+            flex: 1;
+        }
+
+        .doctor-name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .doctor-specialty {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .doctor-rating {
+            color: #FFB800;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 24px 0 16px 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .category-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .category-icon {
+            width: 48px;
+            height: 48px;
+            background: #F5F5F5;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .category-name {
+            font-size: 12px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="status-bar">
+                <span>9:41</span>
+                <div>
+                    <span>信号</span>
+                    <span>WiFi</span>
+                    <span>电池</span>
+                </div>
+            </div>
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="搜索医生、科室、疾病...">
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="section-title">医疗服务</div>
+            <div class="category-grid">
+                <div class="category-item">
+                    <div class="category-icon">👨‍⚕️</div>
+                    <span class="category-name">问诊</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">💊</div>
+                    <span class="category-name">药品</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">🏥</div>
+                    <span class="category-name">挂号</span>
+                </div>
+                <div class="category-item">
+                    <div class="category-icon">📋</div>
+                    <span class="category-name">体检</span>
+                </div>
+            </div>
+
+            <div class="section-title">推荐医生</div>
+            <div class="doctor-card">
+                <div class="doctor-avatar"></div>
+                <div class="doctor-info">
+                    <div class="doctor-name">张医生</div>
+                    <div class="doctor-specialty">主任医师 · 内科</div>
+                    <div class="doctor-rating">
+                        ⭐️ 4.9 (1.2k评价)
+                    </div>
+                </div>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-avatar"></div>
+                <div class="doctor-info">
+                    <div class="doctor-name">李医生</div>
+                    <div class="doctor-specialty">副主任医师 · 儿科</div>
+                    <div class="doctor-rating">
+                        ⭐️ 4.8 (890评价)
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 底部导航 -->
+        <footer class="footer">
+            <div class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                </svg>
+            </div>
+            <div class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </div>
+            <button class="add-button">+</button>
+            <div class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+            </div>
+            <div class="nav-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+                </svg>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
